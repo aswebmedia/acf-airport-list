@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: Advanced Custom Fields: FIELD_LABEL
+Plugin Name: Advanced Custom Fields: Airport List
 Plugin URI: PLUGIN_URL
 Description: SHORT_DESCRIPTION
 Version: 1.0.0
@@ -16,9 +16,9 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('acf_plugin_FIELD_NAME') ) :
+if( !class_exists('acf_plugin_airport_list') ) :
 
-class acf_plugin_FIELD_NAME {
+class acf_plugin_airport_list {
 	
 	/*
 	*  __construct
@@ -45,7 +45,7 @@ class acf_plugin_FIELD_NAME {
 		
 		// set text domain
 		// https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
-		load_plugin_textdomain( 'acf-FIELD_NAME', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
+		load_plugin_textdomain( 'acf-airport_list', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
 		
 		
 		// include field
@@ -75,7 +75,7 @@ class acf_plugin_FIELD_NAME {
 		
 		
 		// include
-		include_once('fields/acf-FIELD_NAME-v' . $version . '.php');
+		include_once('fields/acf-airport_list-v' . $version . '.php');
 		
 	}
 	
@@ -83,7 +83,7 @@ class acf_plugin_FIELD_NAME {
 
 
 // initialize
-new acf_plugin_FIELD_NAME();
+new acf_plugin_airport_list();
 
 
 // class_exists check

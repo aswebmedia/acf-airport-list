@@ -5,10 +5,10 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('acf_field_FIELD_NAME') ) :
+if( !class_exists('acf_field_airport_list') ) :
 
 
-class acf_field_FIELD_NAME extends acf_field {
+class acf_field_airport_list extends acf_field {
 	
 	// vars
 	var $settings, // will hold info such as dir / path
@@ -27,8 +27,8 @@ class acf_field_FIELD_NAME extends acf_field {
 	function __construct( $settings )
 	{
 		// vars
-		$this->name = 'FIELD_NAME';
-		$this->label = __('FIELD_LABEL');
+		$this->name = 'airport_list';
+		$this->label = __('Airport List');
 		$this->category = __("Basic",'acf'); // Basic, Content, Choice, etc
 		$this->defaults = array(
 			// add default here to merge into your field. 
@@ -154,13 +154,13 @@ class acf_field_FIELD_NAME extends acf_field {
 		
 		
 		// register & include JS
-		wp_register_script( 'acf-input-FIELD_NAME', "{$url}assets/js/input.js", array('acf-input'), $version );
-		wp_enqueue_script('acf-input-FIELD_NAME');
+		wp_register_script( 'acf-input-airport_list', "{$url}assets/js/input.js", array('acf-input'), $version );
+		wp_enqueue_script('acf-input-airport_list');
 		
 		
 		// register & include CSS
-		wp_register_style( 'acf-input-FIELD_NAME', "{$url}assets/css/input.css", array('acf-input'), $version );
-		wp_enqueue_style('acf-input-FIELD_NAME');
+		wp_register_style( 'acf-input-airport_list', "{$url}assets/css/input.css", array('acf-input'), $version );
+		wp_enqueue_style('acf-input-airport_list');
 		
 	}
 	
@@ -373,7 +373,7 @@ class acf_field_FIELD_NAME extends acf_field {
 
 
 // initialize
-new acf_field_FIELD_NAME( $this->settings );
+new acf_field_airport_list( $this->settings );
 
 
 // class_exists check
