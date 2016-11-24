@@ -114,6 +114,9 @@ class acf_field_airport_list extends acf_field {
 	
 	function create_field( $field )
 	{
+
+		print_r($field);
+
 		// defaults?
 		/*
 		$field = array_merge($this->defaults, $field);
@@ -121,11 +124,18 @@ class acf_field_airport_list extends acf_field {
 		
 		// perhaps use $field['preview_size'] to alter the markup?
 		
-		
+		$json = file_get_contents(__DIR__ . '/../assets/data/JSON-Airports/airports.json');
+		$obj = json_decode($json, true);
+		// echo __DIR__ . '/../';
+
 		// create Field HTML
 		?>
 		<div>
-			
+			<select name="" id="">
+				<?php foreach($obj as $key => $value) { ?>
+				<option value="<?php echo $value["iata"] ?>"><?php echo $value["iata"] . '-' . $value["name"]?></option>
+				<?php }?>	
+			</select>
 		</div>
 		<?php
 	}
